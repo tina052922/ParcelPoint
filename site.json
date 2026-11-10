@@ -1,0 +1,10 @@
+{
+  "description": "A self-service parcel kiosk for customers to collect deliveries and return packages with guided steps, secure pickup, locker access, and digital receipts.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
