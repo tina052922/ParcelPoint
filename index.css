@@ -194,22 +194,85 @@ input:focus { border-color: var(--orange); box-shadow: 0 0 0 6px rgba(255,90,31,
 .modal .text-button { margin-top:15px; width:100%; }
 
 @media (max-width: 700px) {
-  .kiosk { min-height:100vh; }
-  .header { height:250px; padding:35px 28px; border-radius:0 0 45px 45px; }
-  .header h1 { margin-top:45px; }
-  .dashboard-header { min-height: 560px; padding: 35px 28px 42px; border-radius: 0 0 48px 48px; }
-  .dashboard-header h1 { margin: 38px 0 26px; }
-  .dashboard-actions button { padding: 12px; }
-  .dashboard-actions button b { font-size: 14px; }
-  .content,.flow,.center-content { padding-left:28px; padding-right:28px; }
-  .welcome-screen { padding:35px 28px; }
-  .art { min-height:380px; transform:scale(.85); margin:-20px -80px; }
-  .welcome-actions { grid-template-columns:1fr; }
+  .viewport { display:block; min-height:100dvh; }
+  .kiosk { width:100%; height:auto; min-height:100dvh; overflow:visible; }
+  .screen { min-height:100dvh; padding-bottom:112px; }
+  .header { height:auto; min-height:230px; padding:35px 24px; border-radius:0 0 36px 36px; }
+  .header h1 { margin-top:38px; font-size:clamp(34px, 9vw, 48px); }
+  .header-row .brand { gap:9px; font-size:18px; }
+  .brand-mark { width:42px; height:42px; border-radius:13px; }
+  .circle,.avatar { width:54px; height:54px; }
+  .dashboard-header { min-height:0; padding:30px 22px 34px; border-radius:0 0 38px 38px; }
+  .dashboard-header h1 { margin:35px 0 24px; font-size:clamp(42px, 12vw, 58px); }
+  .dashboard-actions { gap:10px; }
+  .dashboard-actions button { min-height:88px; padding:10px; gap:8px; border-radius:22px; }
+  .dashboard-actions button > span { width:42px; height:42px; border-radius:14px; }
+  .dashboard-actions button b { font-size:12px; }
+  .dashboard-actions button > svg { width:18px; }
+  .content,.flow,.center-content { padding:34px 22px 120px; }
+  .content h2,.flow h2,.center-content h2 { font-size:clamp(30px, 8vw, 40px); letter-spacing:-1px; }
+  .welcome-screen { min-height:100dvh; padding:30px 22px 24px; grid-template-rows:auto minmax(210px, 30vh) auto auto; gap:10px; }
+  .brand.large { gap:10px; font-size:22px; }
+  .locale button { padding:12px 15px; }
+  .art { min-height:240px; margin:0; }
+  .sun { width:260px; height:260px; top:0; }
+  .van { width:270px; height:135px; left:37%; top:75px; border-radius:38px 55px 20px 20px; }
+  .van:before { width:100px; height:58px; right:18px; top:18px; }
+  .van i { width:48px; height:48px; border-width:13px; bottom:-22px; }
+  .van i:first-of-type { left:35px; }
+  .van i:last-of-type { right:35px; }
+  .van-logo { left:35px; top:34px; }
+  .person { left:15%; top:50px; transform:scale(.72); transform-origin:top left; }
+  .parcel { left:7%; bottom:8px; width:125px; height:110px; }
+  .welcome-copy h1 { font-size:clamp(38px, 10vw, 52px); letter-spacing:-2px; margin:12px 0; }
+  .welcome-copy p { margin:8px 0; font-size:16px; line-height:1.5; }
+  .welcome-actions { grid-template-columns:1fr; gap:10px; }
   .welcome-actions .outline,.welcome-actions .help-link { grid-column:auto; }
-  .button,input { min-height:88px; height:auto; }
+  .welcome-actions .button { min-height:66px; padding:0 22px; font-size:17px; }
+  .welcome-actions .help-link { min-height:52px; font-size:16px; }
+  .button,input { min-height:70px; height:auto; font-size:17px; }
+  .lead,.center-content > p { font-size:17px; }
   .quick-grid { grid-template-columns:1fr; }
-  .support-card { grid-template-columns:auto 1fr; }.support-card .button { grid-column:1/3; }
-  .parcel-card { grid-template-columns:100px 1fr 50px; padding:22px; }
-  .parcel-thumb { width:95px; height:95px; }
-  .stepper b { width:45px; }
+  .support-card { grid-template-columns:auto 1fr; }
+  .support-card .button { grid-column:1/3; }
+  .parcel-card { grid-template-columns:70px minmax(0, 1fr) 38px; gap:10px; padding:15px; border-radius:24px; }
+  .parcel-thumb { width:70px; height:70px; border-radius:20px; }
+  .parcel-card h3 { font-size:16px; overflow-wrap:anywhere; }
+  .parcel-card small { font-size:10px; }
+  .parcel-card > button { width:38px; height:38px; }
+  .chip { padding:7px 9px; font-size:10px; }
+  .timeline { padding:12px 4px 0; }
+  .timeline i { width:12px; height:12px; }
+  .bottom-nav { height:84px; padding:7px 8px; border-radius:24px 24px 0 0; }
+  .bottom-nav button { flex:1; width:auto; height:68px; gap:3px; font-size:10px; }
+  .bottom-nav button > svg { width:20px; height:20px; }
+  .bottom-nav .scan-nav { margin-top:-34px; }
+  .bottom-nav .scan-nav i { width:58px; height:58px; border-width:6px; }
+  .stepper { margin:22px 0 35px; }
+  .stepper i { width:40px; height:40px; }
+  .stepper b { width:min(12vw, 45px); }
+  .code-input { font-size:28px; letter-spacing:8px; }
+  .locker-card { gap:16px; padding:20px; border-radius:24px; }
+  .box-art { width:95px; height:95px; border-radius:24px; }
+  .locker-card h3,.locker-location h3 { font-size:19px; }
+  .locker-location { gap:16px; padding:20px; border-radius:24px; }
+  .locker-location > span { width:72px; height:72px; border-radius:20px; font-size:32px; }
+  .door-art { width:min(300px, 85vw); height:350px; margin:30px auto; }
+  .big-check { width:130px; height:130px; margin:35px 0 15px; }
+  .receipt div { gap:8px; }
+  .receipt button { height:64px; }
+  .scanner { height:280px; }
+  .locker-number { width:180px; height:180px; margin:10px auto 30px; font-size:72px; }
+  .support-card { padding:20px; gap:14px; }
+  .modal { padding:32px 22px; }
+  .modal h2 { font-size:36px; }
+}
+
+@media (max-width: 380px) {
+  .content,.flow,.center-content { padding-left:16px; padding-right:16px; }
+  .welcome-screen { padding-left:16px; padding-right:16px; }
+  .dashboard-header { padding-left:16px; padding-right:16px; }
+  .dashboard-actions button b { font-size:11px; }
+  .bottom-nav { padding-left:3px; padding-right:3px; }
+  .bottom-nav button { font-size:9px; }
 }
